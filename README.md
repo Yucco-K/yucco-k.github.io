@@ -67,3 +67,11 @@ export default tseslint.config([
   },
 ])
 ```
+
+--- 
+
+## こちらのアプリは以下の技術スタックで作成しました。
+
+### Cursor × TaskMaster × Playwright × React × TypeScript × Vite ×  GitHub Pages 
+
+--- 
