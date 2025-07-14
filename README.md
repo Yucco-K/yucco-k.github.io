@@ -154,7 +154,7 @@ yucco-k.github.io/
 
 ## 🎨 開発コンセプト
 
-### Cursor × TaskMaster × Playwright × React × TypeScript × Vite × GitHub Pages
+### Cursor × TaskMaster × Playwright × React × TypeScript × Vite × GitHub Pages × GitHub Actions
 
 最新の開発ツールチェーンを活用し、効率的で保守性の高いコードベースを構築しています。
 
