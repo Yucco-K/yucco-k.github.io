@@ -9,7 +9,7 @@ GitHub Pages でホスティングされ、GitHub Actions による自動デプ�
 
 ## 🎥 デモ
 
-![サンプル動画](src/assets/sample-portfolio%20-v2.gif)
+![サンプル動画](src/assets/sample-portfolio%20-v3.gif)
 
 ## 🛠️ 技術スタック
 
