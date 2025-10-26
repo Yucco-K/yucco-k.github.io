@@ -289,6 +289,10 @@ function Internship() {
 }
 
 const portfolioLinks = [
+	{
+		title: "react-native-todo-app",
+		url: "https://github.com/Yucco-K/react-native-todo-app",
+	},
 	{ title: "question-app", url: "https://github.com/Yucco-K/question-app" },
 	{ title: "snapstreamApp", url: "https://github.com/Yucco-K/snapstreamApp" },
 	{
@@ -304,8 +308,8 @@ const portfolioLinks = [
 
 function Portfolio() {
 	return (
-		<main style={{ padding: "4rem 0", textAlign: "center", color: "#222" }}>
-			<h1 style={{ marginBottom: "2rem", color: "#222" }}>WEB App Portfolio</h1>
+		<main style={{ padding: "4rem 0", textAlign: "center" }}>
+			<h1 style={{ marginBottom: "2rem" }}>WEB App Portfolio</h1>
 			<div
 				style={{
 					display: "flex",
