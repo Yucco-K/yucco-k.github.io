@@ -66,11 +66,24 @@ function Internship() {
 		return "2rem 12rem";
 	}, []);
 	const [padding, setPadding] = React.useState(getResponsivePadding());
+	const [textColor, setTextColor] = React.useState("#fff");
+	const [titleColor, setTitleColor] = React.useState("#6a4fb6");
+
 	React.useEffect(() => {
 		const handleResize = () => setPadding(getResponsivePadding());
 		window.addEventListener("resize", handleResize);
 		return () => window.removeEventListener("resize", handleResize);
 	}, [getResponsivePadding]);
+
+	React.useEffect(() => {
+		// 6秒後（バブルフェードアウト完了後）に文字色を変更
+		const colorTimer = setTimeout(() => {
+			setTextColor("#222");
+			setTitleColor("#5a3fa6");
+		}, 6000);
+
+		return () => clearTimeout(colorTimer);
+	}, []);
 	return (
 		<main
 			style={{
@@ -93,16 +106,18 @@ function Internship() {
 					position: "relative",
 					zIndex: 2,
 					width: "100%",
-					color: "#222",
+					color: textColor,
+					transition: "color 1s ease-out",
 				}}
 			>
 				<h1
 					style={{
-						color: "#5a3fa6",
+						color: titleColor,
 						fontWeight: 800,
 						fontSize: "2.2rem",
 						marginBottom: "1.2rem",
 						letterSpacing: "0.04em",
+						transition: "color 1s ease-out",
 					}}
 				>
 					Internship Portfolio
