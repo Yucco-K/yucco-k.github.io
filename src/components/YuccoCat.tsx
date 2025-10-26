@@ -12,25 +12,54 @@ export default function YuccoCat() {
 	const dragging = useRef(false);
 	const [jumpPower, setJumpPower] = useState(0);
 	const [isDragging, setIsDragging] = useState(false);
+	const [opacity, setOpacity] = useState(0);
+	const [isInitialPhase, setIsInitialPhase] = useState(true);
 
-	// ふわふわアニメーション
+	// フェードインアニメーション（最初の3秒）
+	useEffect(() => {
+		// 3秒かけてフェードイン
+		const fadeTimer = setTimeout(() => {
+			setIsInitialPhase(false);
+		}, 3000);
+
+		// opacityを徐々に上げる
+		let fadeOpacity = 0;
+		const fadeInterval = setInterval(() => {
+			fadeOpacity += 0.033; // 3秒で1になるように（1000ms / 30fps ≈ 33ms、1 / 30 ≈ 0.033）
+			if (fadeOpacity >= 1) {
+				fadeOpacity = 1;
+				clearInterval(fadeInterval);
+			}
+			setOpacity(fadeOpacity);
+		}, 100);
+
+		return () => {
+			clearTimeout(fadeTimer);
+			clearInterval(fadeInterval);
+		};
+	}, []);
+
+	// ふわふわアニメーション（初期フェーズは控えめに）
 	useEffect(() => {
 		let frame = 0;
 		let raf: number;
 		const animate = () => {
 			frame += 1;
+			const intensity = isInitialPhase ? 0.3 : 1; // 最初の3秒は30%の強度
 			setFloat({
-				y: Math.sin(frame / 60) * 20,
-				x: Math.sin(frame / 90) * 10,
+				y: Math.sin(frame / 60) * 20 * intensity,
+				x: Math.sin(frame / 90) * 10 * intensity,
 			});
 			raf = requestAnimationFrame(animate);
 		};
 		animate();
 		return () => cancelAnimationFrame(raf);
-	}, []);
+	}, [isInitialPhase]);
 
-	// たまに回転（ランダム）
+	// たまに回転（ランダム）- 初期フェーズは無効
 	useEffect(() => {
+		if (isInitialPhase) return;
+
 		const interval = setInterval(() => {
 			if (Math.random() > 0.7) {
 				controls.start({
@@ -40,7 +69,7 @@ export default function YuccoCat() {
 			}
 		}, 4000);
 		return () => clearInterval(interval);
-	}, [controls]);
+	}, [controls, isInitialPhase]);
 
 	// ドラッグイベント
 	useEffect(() => {
@@ -94,11 +123,12 @@ export default function YuccoCat() {
 					background: "rgba(255,255,255,0.05)",
 					cursor: isDragging ? "grabbing" : "grab",
 					userSelect: "none",
+					opacity: opacity,
 				}}
 				animate={isDragging ? { y: 0 } : { ...float, y: float.y - jumpPower }}
 				transition={{ type: "spring", stiffness: 40, damping: 10 }}
 				whileHover={
-					isDragging
+					isDragging || isInitialPhase
 						? {}
 						: {
 								y: -40 - jumpPower,
@@ -108,7 +138,7 @@ export default function YuccoCat() {
 						  }
 				}
 				onMouseDown={handleMouseDown}
-				onClick={handleJump}
+				onClick={isInitialPhase ? undefined : handleJump}
 			/>
 		</>
 	);
