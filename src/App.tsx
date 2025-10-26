@@ -289,8 +289,8 @@ const portfolioLinks = [
 
 function Portfolio() {
 	return (
-		<main style={{ padding: "4rem 0", textAlign: "center" }}>
-			<h1 style={{ marginBottom: "2rem" }}>WEB App Portfolio</h1>
+		<main style={{ padding: "4rem 0", textAlign: "center", color: "#222" }}>
+			<h1 style={{ marginBottom: "2rem", color: "#222" }}>WEB App Portfolio</h1>
 			<div
 				style={{
 					display: "flex",
