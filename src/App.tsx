@@ -93,12 +93,12 @@ function Internship() {
 					position: "relative",
 					zIndex: 2,
 					width: "100%",
-					color: "#fff",
+					color: "#222",
 				}}
 			>
 				<h1
 					style={{
-						color: "#6a4fb6",
+						color: "#5a3fa6",
 						fontWeight: 800,
 						fontSize: "2.2rem",
 						marginBottom: "1.2rem",
