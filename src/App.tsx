@@ -100,7 +100,7 @@ function Internship() {
 				position: "relative",
 			}}
 		>
-			<BubbleScene />
+			<BubbleScene shouldFadeOut={true} />
 			<div
 				style={{
 					position: "relative",

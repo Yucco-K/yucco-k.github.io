@@ -107,11 +107,17 @@ function InteractiveBubbles({ isAnimating }: { isAnimating: boolean }) {
 	);
 }
 
-export default function BubbleScene() {
+export default function BubbleScene({
+	shouldFadeOut = false,
+}: {
+	shouldFadeOut?: boolean;
+}) {
 	const [isAnimating, setIsAnimating] = useState(true);
 	const [opacity, setOpacity] = useState(1);
 
 	useEffect(() => {
+		if (!shouldFadeOut) return;
+
 		let fadeInterval: NodeJS.Timeout | null = null;
 
 		// 5秒後にフェードアウト開始
@@ -133,7 +139,7 @@ export default function BubbleScene() {
 			clearTimeout(fadeTimer);
 			if (fadeInterval) clearInterval(fadeInterval);
 		};
-	}, []);
+	}, [shouldFadeOut]);
 
 	return (
 		<Canvas
