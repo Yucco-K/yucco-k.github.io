@@ -1,9 +1,9 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Color, Group, MeshPhysicalMaterial, MathUtils } from "three";
 import { OrbitControls, Environment } from "@react-three/drei";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
-function Bubble({ seed }: { seed: number }) {
+function Bubble({ seed, isAnimating }: { seed: number; isAnimating: boolean }) {
 	const ref = useRef<Group>(null!);
 	const matRef = useRef<MeshPhysicalMaterial>(null!);
 	const rand = Math.sin(seed) * 0.5 + 0.5;
@@ -12,12 +12,14 @@ function Bubble({ seed }: { seed: number }) {
 
 	useFrame((_state, delta) => {
 		if (!ref.current) return;
-		ref.current.position.y += delta * (0.25 + rand * 0.3);
-		ref.current.rotation.y += delta * 0.05;
-		if (ref.current.position.y > 6) {
-			ref.current.position.y = -2;
-			ref.current.position.x = (Math.random() - 0.5) * 8;
-			ref.current.position.z = (Math.random() - 0.5) * 8;
+		if (isAnimating) {
+			ref.current.position.y += delta * (0.25 + rand * 0.3);
+			ref.current.rotation.y += delta * 0.05;
+			if (ref.current.position.y > 6) {
+				ref.current.position.y = -2;
+				ref.current.position.x = (Math.random() - 0.5) * 8;
+				ref.current.position.z = (Math.random() - 0.5) * 8;
+			}
 		}
 		const progress = (ref.current.position.y + 2) / 8;
 		const opacity = 0.15 + Math.sin(Math.PI * progress) * 0.45;
@@ -55,17 +57,21 @@ function Bubble({ seed }: { seed: number }) {
 	);
 }
 
-function Bubbles() {
+function Bubbles({ isAnimating }: { isAnimating: boolean }) {
 	return (
 		<>
 			{Array.from({ length: 90 }, () => (
-				<Bubble key={crypto.randomUUID()} seed={Math.random() * 100} />
+				<Bubble
+					key={crypto.randomUUID()}
+					seed={Math.random() * 100}
+					isAnimating={isAnimating}
+				/>
 			))}
 		</>
 	);
 }
 
-function InteractiveBubbles() {
+function InteractiveBubbles({ isAnimating }: { isAnimating: boolean }) {
 	const groupRef = useRef<Group>(null!);
 	const targetRot = useRef({ x: 0, y: 0 });
 
@@ -81,7 +87,7 @@ function InteractiveBubbles() {
 	});
 
 	useFrame(() => {
-		if (!groupRef.current) return;
+		if (!groupRef.current || !isAnimating) return;
 		groupRef.current.rotation.x = MathUtils.lerp(
 			groupRef.current.rotation.x,
 			targetRot.current.x,
@@ -96,12 +102,39 @@ function InteractiveBubbles() {
 
 	return (
 		<group ref={groupRef}>
-			<Bubbles />
+			<Bubbles isAnimating={isAnimating} />
 		</group>
 	);
 }
 
 export default function BubbleScene() {
+	const [isAnimating, setIsAnimating] = useState(true);
+	const [opacity, setOpacity] = useState(1);
+
+	useEffect(() => {
+		let fadeInterval: NodeJS.Timeout | null = null;
+
+		// 5秒後にフェードアウト開始
+		const fadeTimer = setTimeout(() => {
+			setIsAnimating(false);
+			// フェードアウトアニメーション（1秒かけて）
+			let fadeOpacity = 1;
+			fadeInterval = setInterval(() => {
+				fadeOpacity -= 0.05;
+				if (fadeOpacity <= 0) {
+					fadeOpacity = 0;
+					if (fadeInterval) clearInterval(fadeInterval);
+				}
+				setOpacity(fadeOpacity);
+			}, 50);
+		}, 5000);
+
+		return () => {
+			clearTimeout(fadeTimer);
+			if (fadeInterval) clearInterval(fadeInterval);
+		};
+	}, []);
+
 	return (
 		<Canvas
 			style={{
@@ -111,13 +144,16 @@ export default function BubbleScene() {
 				width: "100vw",
 				height: "100vh",
 				background: "#2b8dff",
+				opacity: opacity,
+				transition: "opacity 0.05s ease-out",
+				pointerEvents: opacity === 0 ? "none" : "auto",
 			}}
 			camera={{ position: [0, 2, 8], fov: 60 }}
 		>
 			<ambientLight intensity={0.6} />
 			<directionalLight position={[5, 8, 5]} intensity={0.4} />
 			<OrbitControls makeDefault enablePan={false} />
-			<InteractiveBubbles />
+			<InteractiveBubbles isAnimating={isAnimating} />
 			<Environment preset="sunset" blur={0.8} />
 		</Canvas>
 	);
