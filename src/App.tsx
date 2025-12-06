@@ -99,6 +99,7 @@ function Internship() {
 				width: "100vw",
 				minHeight: "100vh",
 				padding,
+				paddingTop: "6rem",
 				color: "#222",
 				textAlign: "center",
 				display: "flex",
@@ -342,7 +343,7 @@ const portfolioLinks = [
 
 function Portfolio() {
 	return (
-		<main style={{ padding: "4rem 0", textAlign: "center" }}>
+		<main style={{ padding: "4rem 0", paddingTop: "6rem", textAlign: "center" }}>
 			<h1 style={{ marginBottom: "2rem" }}>WEB App Portfolio</h1>
 			<div
 				style={{
