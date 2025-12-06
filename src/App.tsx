@@ -398,10 +398,12 @@ function Portfolio() {
 			<h1 style={{ marginBottom: "2rem" }}>WEB App Portfolio</h1>
 			<div
 				style={{
-					display: "flex",
-					flexWrap: "wrap",
-					justifyContent: "center",
+					display: "grid",
+					gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
 					gap: "2rem",
+					maxWidth: "1200px",
+					margin: "0 auto",
+					padding: "0 2rem",
 				}}
 			>
 				{portfolioLinks.map((link) => (
@@ -412,8 +414,6 @@ function Portfolio() {
 						rel="noopener noreferrer"
 						style={{
 							display: "block",
-							minWidth: 220,
-							maxWidth: 320,
 							padding: "1.5rem",
 							background: "rgba(255,255,255,0.12)",
 							borderRadius: "1.5rem",
