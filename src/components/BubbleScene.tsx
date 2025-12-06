@@ -153,6 +153,7 @@ export default function BubbleScene({
 				opacity: opacity,
 				transition: "opacity 0.05s ease-out",
 				pointerEvents: opacity === 0 ? "none" : "auto",
+				display: opacity === 0 ? "none" : "block",
 			}}
 			camera={{ position: [0, 2, 8], fov: 60 }}
 		>
