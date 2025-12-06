@@ -486,13 +486,13 @@ function AppRoutes() {
 						>
 							GitHub
 						</FooterLink>
-						<FooterLink
-							href="https://zenn.dev/yucco_k"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							Zenn
-						</FooterLink>
+					<FooterLink
+						href="https://zenn.dev/yucco"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Zenn
+					</FooterLink>
 					</FooterLinks>
 					<Copyright>© 2025 Yucco-K. All rights reserved.</Copyright>
 				</FooterContent>
