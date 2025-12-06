@@ -67,12 +67,12 @@ function useBgColor() {
 }
 
 function Internship() {
-	// レスポンシブpadding
+	// レスポンシブpadding（top right bottom left）
 	const getResponsivePadding = React.useCallback(() => {
-		if (window.innerWidth < 600) return "2rem 1rem";
-		if (window.innerWidth < 900) return "2rem 4rem";
-		if (window.innerWidth < 1200) return "2rem 8rem";
-		return "2rem 12rem";
+		if (window.innerWidth < 600) return "6rem 1rem 2rem 1rem";
+		if (window.innerWidth < 900) return "6rem 4rem 2rem 4rem";
+		if (window.innerWidth < 1200) return "6rem 8rem 2rem 8rem";
+		return "6rem 12rem 2rem 12rem";
 	}, []);
 	const [padding, setPadding] = React.useState(getResponsivePadding());
 	const [textColor, setTextColor] = React.useState("#fff");
@@ -99,7 +99,6 @@ function Internship() {
 				width: "100vw",
 				minHeight: "100vh",
 				padding,
-				paddingTop: "6rem",
 				color: "#222",
 				textAlign: "center",
 				display: "flex",
@@ -343,7 +342,9 @@ const portfolioLinks = [
 
 function Portfolio() {
 	return (
-		<main style={{ padding: "4rem 0", paddingTop: "6rem", textAlign: "center" }}>
+		<main
+			style={{ padding: "6rem 0 4rem 0", textAlign: "center" }}
+		>
 			<h1 style={{ marginBottom: "2rem" }}>WEB App Portfolio</h1>
 			<div
 				style={{
