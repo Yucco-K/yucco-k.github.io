@@ -311,6 +311,10 @@ function Internship() {
 
 const portfolioLinks = [
 	{
+		title: "App Showcase",
+		url: "https://github.com/Yucco-K/showcase",
+	},
+	{
 		title: "react-native-todo-app",
 		url: "https://github.com/Yucco-K/react-native-todo-app",
 	},
