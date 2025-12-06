@@ -148,7 +148,6 @@ function Internship() {
 		<main
 			style={{
 				width: "100vw",
-				minHeight: "100vh",
 				padding,
 				color: "#222",
 				textAlign: "center",
@@ -158,6 +157,7 @@ function Internship() {
 				alignItems: "center",
 				boxSizing: "border-box",
 				position: "relative",
+				flex: 1,
 			}}
 		>
 			<BubbleScene shouldFadeOut={true} />
@@ -393,7 +393,7 @@ const portfolioLinks = [
 
 function Portfolio() {
 	return (
-		<main style={{ padding: "6rem 0 4rem 0", textAlign: "center" }}>
+		<main style={{ padding: "6rem 0 4rem 0", textAlign: "center", flex: 1 }}>
 			<h1 style={{ marginBottom: "2rem" }}>WEB App Portfolio</h1>
 			<div
 				style={{
@@ -437,7 +437,6 @@ function Top() {
 		<main
 			style={{
 				width: "100vw",
-				minHeight: "100vh",
 				padding: "6rem 0 4rem 0",
 				textAlign: "center",
 				position: "relative",
@@ -446,6 +445,7 @@ function Top() {
 				flexDirection: "column",
 				alignItems: "center",
 				justifyContent: "flex-start",
+				flex: 1,
 			}}
 		>
 			<BubbleScene />
