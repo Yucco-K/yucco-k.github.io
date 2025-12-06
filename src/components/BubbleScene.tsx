@@ -120,7 +120,7 @@ export default function BubbleScene({
 
 		let fadeInterval: NodeJS.Timeout | null = null;
 
-		// 5秒後にフェードアウト開始
+		// 3秒後にフェードアウト開始
 		const fadeTimer = setTimeout(() => {
 			setIsAnimating(false);
 			// フェードアウトアニメーション（1秒かけて）
@@ -133,7 +133,7 @@ export default function BubbleScene({
 				}
 				setOpacity(fadeOpacity);
 			}, 50);
-		}, 5000);
+		}, 3000);
 
 		return () => {
 			clearTimeout(fadeTimer);
