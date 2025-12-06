@@ -28,8 +28,11 @@ const Nav = styled.nav`
 	gap: 2rem;
 	padding: 1.5rem 0 1rem 0;
 	background: rgba(0, 0, 0, 0.08);
-	position: sticky;
+	position: fixed;
 	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
 	z-index: 10;
 `;
 const NavLink = styled(Link)<{ $active?: boolean }>`
