@@ -23,8 +23,13 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'system-ui', 'Avenir', 'Helvetica', 'Arial', sans-serif;
     background: ${({ bg }: { bg: string }) => bg};
     color: #fff;
-    min-height: 100vh;
+    height: 100%;
     transition: background 0.6s;
+  }
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 `;
 
@@ -55,6 +60,12 @@ const NavLink = styled(Link)<{ $active?: boolean }>`
 		background: rgba(255, 255, 255, 0.18);
 		color: #ffd700;
 	}
+`;
+
+const AppContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 `;
 
 const Footer = styled.footer`
@@ -460,43 +471,45 @@ function AppRoutes() {
 	return (
 		<>
 			<GlobalStyle bg={bg} />
-			<Nav>
-				<NavLink to="/" $active={pathname === "/"}>
-					Top
-				</NavLink>
-				<NavLink to="/internship" $active={pathname === "/internship"}>
-					Internship
-				</NavLink>
-				<NavLink to="/portfolio" $active={pathname === "/portfolio"}>
-					Portfolio
-				</NavLink>
-			</Nav>
-			<Routes>
-				<Route path="/" element={<Top />} />
-				<Route path="/internship" element={<Internship />} />
-				<Route path="/portfolio" element={<Portfolio />} />
-			</Routes>
-			<Footer>
-				<FooterContent>
-					<FooterLinks>
-						<FooterLink
-							href="https://github.com/Yucco-K"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							GitHub
-						</FooterLink>
-					<FooterLink
-						href="https://zenn.dev/yucco"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Zenn
-					</FooterLink>
-					</FooterLinks>
-					<Copyright>© 2025 Yucco-K. All rights reserved.</Copyright>
-				</FooterContent>
-			</Footer>
+			<AppContainer>
+				<Nav>
+					<NavLink to="/" $active={pathname === "/"}>
+						Top
+					</NavLink>
+					<NavLink to="/internship" $active={pathname === "/internship"}>
+						Internship
+					</NavLink>
+					<NavLink to="/portfolio" $active={pathname === "/portfolio"}>
+						Portfolio
+					</NavLink>
+				</Nav>
+				<Routes>
+					<Route path="/" element={<Top />} />
+					<Route path="/internship" element={<Internship />} />
+					<Route path="/portfolio" element={<Portfolio />} />
+				</Routes>
+				<Footer>
+					<FooterContent>
+						<FooterLinks>
+							<FooterLink
+								href="https://github.com/Yucco-K"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								GitHub
+							</FooterLink>
+							<FooterLink
+								href="https://zenn.dev/yucco"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								Zenn
+							</FooterLink>
+						</FooterLinks>
+						<Copyright>© 2025 Yucco-K. All rights reserved.</Copyright>
+					</FooterContent>
+				</Footer>
+			</AppContainer>
 		</>
 	);
 }
