@@ -64,17 +64,20 @@ const NavLink = styled(Link)<{ $active?: boolean }>`
 `;
 
 const AppContainer = styled.div`
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 `;
 
 const Footer = styled.footer`
+	width: 100%;
 	background: rgba(0, 0, 0, 0.15);
 	color: #fff;
 	padding: 2rem 1rem;
 	text-align: center;
 	margin-top: auto;
+	box-sizing: border-box;
 `;
 
 const FooterContent = styled.div`
@@ -433,7 +436,15 @@ const portfolioLinks = [
 
 function Portfolio() {
 	return (
-		<main style={{ padding: "6rem 0 4rem 0", textAlign: "center", flex: 1 }}>
+		<main
+			style={{
+				width: "100vw",
+				padding: "6rem 0 4rem 0",
+				textAlign: "center",
+				flex: 1,
+				boxSizing: "border-box",
+			}}
+		>
 			<h1 style={{ marginBottom: "2rem" }}>WEB App Portfolio</h1>
 			<PortfolioGrid>
 				{portfolioLinks.map((link) => (
