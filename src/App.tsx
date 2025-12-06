@@ -318,7 +318,7 @@ const portfolioLinks = [
 		title: "Re:Mind",
 		url: "https://github.com/Yucco-K/react-native-todo-app",
 	},
-	{ title: "question-app", url: "https://github.com/Yucco-K/question-app" },
+	{ title: "質問掲示板アプリ", url: "https://github.com/Yucco-K/question-app" },
 	{ title: "snapstreamApp", url: "https://github.com/Yucco-K/snapstreamApp" },
 	{
 		title: "lostiteminfoApp",
