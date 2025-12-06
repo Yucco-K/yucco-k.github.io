@@ -17,19 +17,16 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-  html, body {
+  html, body, #root {
     margin: 0;
     padding: 0;
+    height: 100%;
     font-family: 'system-ui', 'Avenir', 'Helvetica', 'Arial', sans-serif;
+  }
+  body {
     background: ${({ bg }: { bg: string }) => bg};
     color: #fff;
-    height: 100%;
     transition: background 0.6s;
-  }
-  #root {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
   }
 `;
 
@@ -65,7 +62,7 @@ const NavLink = styled(Link)<{ $active?: boolean }>`
 const AppContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
+	min-height: 100%;
 `;
 
 const Footer = styled.footer`
