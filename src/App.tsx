@@ -57,6 +57,46 @@ const NavLink = styled(Link)<{ $active?: boolean }>`
 	}
 `;
 
+const Footer = styled.footer`
+	background: rgba(0, 0, 0, 0.15);
+	color: #fff;
+	padding: 2rem 1rem;
+	text-align: center;
+	margin-top: auto;
+`;
+
+const FooterContent = styled.div`
+	max-width: 800px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	align-items: center;
+`;
+
+const FooterLinks = styled.div`
+	display: flex;
+	gap: 2rem;
+	flex-wrap: wrap;
+	justify-content: center;
+`;
+
+const FooterLink = styled.a`
+	color: #fff;
+	text-decoration: none;
+	font-weight: 500;
+	transition: color 0.2s;
+	&:hover {
+		color: #ffd700;
+	}
+`;
+
+const Copyright = styled.p`
+	margin: 0;
+	font-size: 0.9rem;
+	opacity: 0.8;
+`;
+
 function useBgColor() {
 	const { pathname } = useLocation();
 	return useMemo(() => {
@@ -342,9 +382,7 @@ const portfolioLinks = [
 
 function Portfolio() {
 	return (
-		<main
-			style={{ padding: "6rem 0 4rem 0", textAlign: "center" }}
-		>
+		<main style={{ padding: "6rem 0 4rem 0", textAlign: "center" }}>
 			<h1 style={{ marginBottom: "2rem" }}>WEB App Portfolio</h1>
 			<div
 				style={{
@@ -438,6 +476,27 @@ function AppRoutes() {
 				<Route path="/internship" element={<Internship />} />
 				<Route path="/portfolio" element={<Portfolio />} />
 			</Routes>
+			<Footer>
+				<FooterContent>
+					<FooterLinks>
+						<FooterLink
+							href="https://github.com/Yucco-K"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							GitHub
+						</FooterLink>
+						<FooterLink
+							href="https://zenn.dev/yucco_k"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Zenn
+						</FooterLink>
+					</FooterLinks>
+					<Copyright>© 2025 Yucco-K. All rights reserved.</Copyright>
+				</FooterContent>
+			</Footer>
 		</>
 	);
 }
