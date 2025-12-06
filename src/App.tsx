@@ -12,8 +12,14 @@ import BubbleScene from "./components/BubbleScene";
 import YuccoCat from "./components/YuccoCat";
 
 const GlobalStyle = createGlobalStyle`
-  body {
+  * {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
     font-family: 'system-ui', 'Avenir', 'Helvetica', 'Arial', sans-serif;
     background: ${({ bg }: { bg: string }) => bg};
     color: #fff;
