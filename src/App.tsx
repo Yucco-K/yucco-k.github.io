@@ -109,6 +109,41 @@ const Copyright = styled.p`
 	opacity: 0.8;
 `;
 
+const PortfolioGrid = styled.div`
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2rem;
+
+	@media (min-width: 768px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media (min-width: 1024px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+`;
+
+const PortfolioCard = styled.a`
+	display: block;
+	padding: 1.5rem;
+	background: rgba(255, 255, 255, 0.12);
+	border-radius: 1.5rem;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+	color: #222;
+	font-weight: 600;
+	font-size: 1.1rem;
+	text-decoration: none;
+	transition: transform 0.2s, box-shadow 0.2s;
+
+	&:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+	}
+`;
+
 function useBgColor() {
 	const { pathname } = useLocation();
 	return useMemo(() => {
@@ -396,39 +431,18 @@ function Portfolio() {
 	return (
 		<main style={{ padding: "6rem 0 4rem 0", textAlign: "center", flex: 1 }}>
 			<h1 style={{ marginBottom: "2rem" }}>WEB App Portfolio</h1>
-			<div
-				style={{
-					display: "grid",
-					gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-					gap: "2rem",
-					maxWidth: "1200px",
-					margin: "0 auto",
-					padding: "0 2rem",
-				}}
-			>
+			<PortfolioGrid>
 				{portfolioLinks.map((link) => (
-					<a
+					<PortfolioCard
 						key={link.url}
 						href={link.url}
 						target="_blank"
 						rel="noopener noreferrer"
-						style={{
-							display: "block",
-							padding: "1.5rem",
-							background: "rgba(255,255,255,0.12)",
-							borderRadius: "1.5rem",
-							boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
-							color: "#222",
-							fontWeight: 600,
-							fontSize: "1.1rem",
-							textDecoration: "none",
-							transition: "transform 0.2s, box-shadow 0.2s",
-						}}
 					>
 						{link.title}
-					</a>
+					</PortfolioCard>
 				))}
-			</div>
+			</PortfolioGrid>
 		</main>
 	);
 }
