@@ -325,7 +325,7 @@ const portfolioLinks = [
 		url: "https://github.com/Yucco-K/lostiteminfoApp",
 	},
 	{
-		title: "jutaku-assignment",
+		title: "Projectマッチングアプリ",
 		url: "https://github.com/Yucco-K/jutaku-assignment",
 	},
 	{ title: "tech-blog-1", url: "https://github.com/Yucco-K/tech-blog-1" },
