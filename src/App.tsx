@@ -315,7 +315,7 @@ const portfolioLinks = [
 		url: "https://github.com/Yucco-K/showcase",
 	},
 	{
-		title: "react-native-todo-app",
+		title: "Re:Mind",
 		url: "https://github.com/Yucco-K/react-native-todo-app",
 	},
 	{ title: "question-app", url: "https://github.com/Yucco-K/question-app" },
