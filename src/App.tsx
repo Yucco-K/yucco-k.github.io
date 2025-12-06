@@ -78,12 +78,14 @@ const Footer = styled.footer`
 `;
 
 const FooterContent = styled.div`
+	width: 100%;
 	max-width: 800px;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
 	align-items: center;
+	box-sizing: border-box;
 `;
 
 const FooterLinks = styled.div`
@@ -113,9 +115,11 @@ const PortfolioGrid = styled.div`
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 2rem;
+	width: 100%;
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 2rem;
+	box-sizing: border-box;
 
 	@media (min-width: 768px) {
 		grid-template-columns: repeat(2, 1fr);
