@@ -82,7 +82,7 @@ export default function Internship() {
 						Issue作成者やレビュー担当者と丁寧にやり取りしつつ、品質とスピードの両立を意識した開発（Cursor
 						EditorなどAIツールの活用）を経験
 					</b>
-					。現在もチーム開発の中で着実にスキルを積み上げています。
+					。
 				</p>
 				<h2>🚀 What I Worked On</h2>
 				<h3>✅ UX改善・UI向上</h3>
@@ -167,7 +167,9 @@ export default function Internship() {
 					<b>GitHubプロフィール連携機能：</b>{" "}
 					学習者の課題進捗や学習成果をGitHubプロフィールに埋め込めるバッジ機能を実装。動的SVG生成（シンプルバッジ・詳細カード）、公開/非公開設定、表示項目のプライバシーカスタマイズ機能、ワンクリック埋め込みコード生成を開発。tRPCによる型安全なAPI設計、統計情報の並列取得によるパフォーマンス最適化、CORS対応を実現。
 					<br />
-					<div style={{ fontSize: "0.9rem", color: "#555", marginTop: "0.5rem" }}>
+					<div
+						style={{ fontSize: "0.9rem", color: "#555", marginTop: "0.5rem" }}
+					>
 						※ プロダクト全体との整合性を考慮し、より最適な仕様を検討中
 					</div>
 					<br />
@@ -176,8 +178,11 @@ export default function Internship() {
 					→ tRPC、Chakra UI → Mantine UI
 					移行）に準拠するよう全面改修。CRUD機能（作成・読取・更新・削除）、CMS管理画面（アコーディオン表示、コース単位一括選択、公開/非公開切り替え）、ログインユーザー向け公開ページ、ナビゲーショントラッキング（クエリパラメータ）を開発。Zodによるバリデーション、トランザクション処理（削除・更新時の整合性保証）、カスケード削除、slug自動生成（重複チェック）、tRPCキャッシュ最適化（30分）を実装。
 					<br />
-					<div style={{ fontSize: "0.9rem", color: "#555", marginTop: "0.5rem" }}>
-						※ UI/UXの最終調整中（レッスンカード表示の統一、ナビゲーション動線の最適化）
+					<div
+						style={{ fontSize: "0.9rem", color: "#555", marginTop: "0.5rem" }}
+					>
+						※
+						UI/UXの最終調整中（レッスンカード表示の統一、ナビゲーション動線の最適化）
 					</div>
 					<br />
 				</div>
@@ -248,4 +253,3 @@ export default function Internship() {
 		</main>
 	);
 }
-
