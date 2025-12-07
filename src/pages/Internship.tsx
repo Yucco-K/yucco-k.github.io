@@ -67,7 +67,9 @@ export default function Internship() {
 				>
 					Internship Portfolio
 				</h1>
-				<h2>🍀 About</h2>
+				<h2 style={{ marginTop: "2.5rem", marginBottom: "1rem" }}>
+					🍀 About
+				</h2>
 				<p>
 					<b>教育系IT企業での長期インターン（2024年12月〜現在）</b>
 				</p>
@@ -84,8 +86,12 @@ export default function Internship() {
 					</b>
 					。
 				</p>
-				<h2>🚀 What I Worked On</h2>
-				<h3>✅ UX改善・UI向上</h3>
+				<h2 style={{ marginTop: "2.5rem", marginBottom: "1rem" }}>
+					🚀 What I Worked On
+				</h2>
+				<h3 style={{ marginTop: "2rem", marginBottom: "0.8rem" }}>
+					✅ UX改善・UI向上
+				</h3>
 				<div style={{ textAlign: "left", margin: "0 auto", maxWidth: 600 }}>
 					<b>スケルトンUIの導入：</b>{" "}
 					ローディング中のちらつきや無表示を防止するため、レッスン詳細ページにスケルトンを実装。
@@ -107,7 +113,9 @@ export default function Internship() {
 					最終ページでのメッセージ表示や非公開ページへの遷移を修正。状況に応じた適切なトースト表示とページ遷移を実装。
 					<br />
 				</div>
-				<h3>🛠 バグ修正・ロジック改善</h3>
+				<h3 style={{ marginTop: "2rem", marginBottom: "0.8rem" }}>
+					🛠 バグ修正・ロジック改善
+				</h3>
 				<div style={{ textAlign: "left", margin: "0 auto", maxWidth: 600 }}>
 					<b>ユーザー名生成ロジックの見直し：</b>{" "}
 					メールアドレスからのユーザー名自動生成に関する仕様を見直し、プライバシー面を改善。
@@ -145,7 +153,9 @@ export default function Internship() {
 					開発環境や一部本番環境でのレッスン完了率・進捗表示の不具合（非公開チュートリアルが進捗率計算に含まれる問題）を修正。
 					<br />
 				</div>
-				<h3>🔧 機能追加・改善</h3>
+				<h3 style={{ marginTop: "2rem", marginBottom: "0.8rem" }}>
+					🔧 機能追加・改善
+				</h3>
 				<div style={{ textAlign: "left", margin: "0 auto", maxWidth: 600 }}>
 					<b>ドラッグ＆ドロップで並び替え可能に：</b>{" "}
 					@dnd-kitを活用し、チュートリアルやレッスンの順序変更を直感的にできるUIを新規開発。フロントエンドのUI実装に加え、バックエンドの並び順一括更新API（トランザクション・バリデーション対応）まで担当。ローカル開発用レッスンの運用効率を大幅に改善。
@@ -186,11 +196,13 @@ export default function Internship() {
 					</div>
 					<br />
 				</div>
-				<h2>🧑‍💻 Tech Stack</h2>
+				<h2 style={{ marginTop: "2.5rem", marginBottom: "1rem" }}>
+					🧑‍💻 Tech Stack
+				</h2>
 				<p style={{ fontSize: "0.95rem", color: "#444" }}>
 					※ フルスタックで新機能の開発を中心に携わっています。
 				</p>
-				<h3>Frontend</h3>
+				<h3 style={{ marginTop: "2rem", marginBottom: "0.8rem" }}>Frontend</h3>
 				<div>
 					Next.js 15（App Router）
 					<br />
@@ -204,7 +216,7 @@ export default function Internship() {
 					<br />
 					Firebase Auth（認証）
 				</div>
-				<h3>Backend</h3>
+				<h3 style={{ marginTop: "2rem", marginBottom: "0.8rem" }}>Backend</h3>
 				<div>
 					Supabase
 					<br />
@@ -216,7 +228,9 @@ export default function Internship() {
 					<br />
 					PostgreSQL 18
 				</div>
-				<h3>Infra / CI/CD</h3>
+				<h3 style={{ marginTop: "2rem", marginBottom: "0.8rem" }}>
+					Infra / CI/CD
+				</h3>
 				<div>
 					Vercel（Preview / Staging / Production）
 					<br />
@@ -226,7 +240,7 @@ export default function Internship() {
 					<br />
 					Docker（開発環境）
 				</div>
-				<h3>Others</h3>
+				<h3 style={{ marginTop: "2rem", marginBottom: "0.8rem" }}>Others</h3>
 				<div>
 					SendGrid / Stripe
 					<br />
@@ -234,13 +248,15 @@ export default function Internship() {
 					<br />
 					Postman（APIテスト）
 				</div>
-				<h2>📝 Notes</h2>
+				<h2 style={{ marginTop: "2.5rem", marginBottom: "1rem" }}>📝 Notes</h2>
 				<div style={{ fontSize: "0.95rem", color: "#444" }}>
 					実際のプロダクト名や顧客情報などは守秘義務により記載しておりません。
 					<br />
 					上記は私が担当・関与した業務の一部を抜粋したものです。
 				</div>
-				<h2>📌 Final Words</h2>
+				<h2 style={{ marginTop: "2.5rem", marginBottom: "1rem" }}>
+					📌 Final Words
+				</h2>
 				<p>
 					自己学習やインターンを通じて、<b>プロダクトの改善</b>や
 					<b>ユーザー体験の向上</b>に取り組んでいます。 また、
