@@ -61,16 +61,18 @@ export const PortfolioCard = styled.div`
 	display: flex;
 	flex-direction: column;
 	padding: 2rem;
-	background: rgba(255, 255, 255, 0.85);
+	background: linear-gradient(135deg, #e8fff0 0%, #f0fff4 100%);
 	border-radius: 1rem;
-	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+	box-shadow: 0 4px 24px rgba(34, 139, 34, 0.12);
 	color: #222;
 	text-align: left;
-	transition: transform 0.2s, box-shadow 0.2s;
+	transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
 	min-height: 200px;
+	border: 1px solid rgba(34, 139, 34, 0.1);
 
 	&:hover {
 		transform: translateY(-4px);
-		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+		box-shadow: 0 8px 32px rgba(34, 139, 34, 0.18);
+		background: linear-gradient(135deg, #daffe8 0%, #e8fff0 100%);
 	}
 `;
