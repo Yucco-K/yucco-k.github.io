@@ -1,7 +1,17 @@
 import BubbleScene from "../components/BubbleScene";
 import YuccoCat from "../components/YuccoCat";
+import { useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 export default function Top() {
+	const location = useLocation();
+	const [catKey, setCatKey] = useState(0);
+
+	// Topページに来るたびにYuccoCatを再マウント
+	useEffect(() => {
+		setCatKey((prev) => prev + 1);
+	}, [location.pathname]);
+
 	return (
 		<main
 			style={{
@@ -18,7 +28,7 @@ export default function Top() {
 			}}
 		>
 			<BubbleScene />
-			<YuccoCat />
+			<YuccoCat key={catKey} />
 			<div style={{ position: "relative", zIndex: 2 }}>
 				<h1
 					style={{
