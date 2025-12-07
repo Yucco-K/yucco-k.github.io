@@ -13,12 +13,12 @@ function Bubble({ seed, isAnimating }: { seed: number; isAnimating: boolean }) {
 	useFrame((_state, delta) => {
 		if (!ref.current) return;
 		if (isAnimating) {
-			ref.current.position.y += delta * (0.25 + rand * 0.3);
-			ref.current.rotation.y += delta * 0.05;
-			if (ref.current.position.y > 6) {
-				ref.current.position.y = -2;
-				ref.current.position.x = (Math.random() - 0.5) * 8;
-				ref.current.position.z = (Math.random() - 0.5) * 8;
+		ref.current.position.y += delta * (0.25 + rand * 0.3);
+		ref.current.rotation.y += delta * 0.05;
+		if (ref.current.position.y > 6) {
+			ref.current.position.y = -2;
+			ref.current.position.x = (Math.random() - 0.5) * 8;
+			ref.current.position.z = (Math.random() - 0.5) * 8;
 			}
 		}
 		const progress = (ref.current.position.y + 2) / 8;
