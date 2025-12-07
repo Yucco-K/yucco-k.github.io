@@ -1,11 +1,5 @@
 export const portfolioLinks = [
 	{
-		title: "App Showcase",
-		description:
-			"架空のアプリストアを通じてポートフォリオを紹介 レビューシステム、チャットボット、マーケティング分析など",
-		url: "https://github.com/Yucco-K/showcase",
-	},
-	{
 		title: "Re:Mind",
 		description: "日常にフィットするTODO管理アプリ",
 		url: "https://github.com/Yucco-K/react-native-todo-app",
