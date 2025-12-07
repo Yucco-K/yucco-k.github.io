@@ -57,17 +57,17 @@ export const PortfolioGrid = styled.div`
 	}
 `;
 
-export const PortfolioCard = styled.a`
-	display: block;
-	padding: 1.5rem;
-	background: rgba(255, 255, 255, 0.12);
-	border-radius: 1.5rem;
+export const PortfolioCard = styled.div`
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
+	background: rgba(255, 255, 255, 0.85);
+	border-radius: 1rem;
 	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 	color: #222;
-	font-weight: 600;
-	font-size: 1.1rem;
-	text-decoration: none;
+	text-align: left;
 	transition: transform 0.2s, box-shadow 0.2s;
+	min-height: 200px;
 
 	&:hover {
 		transform: translateY(-4px);
