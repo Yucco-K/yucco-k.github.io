@@ -17,6 +17,11 @@ export const portfolioLinks = [
 		url: "https://github.com/Yucco-K/question-app",
 	},
 	{
+		title: "Study Tracker",
+		description: "学習時間と進捗を見える化するアプリ",
+		url: "https://github.com/Yucco-K/study-tracker",
+	},
+	{
 		title: "tech-blog-1",
 		description:
 			"Cursor と TaskMaster と Zenn と GitHub を連携し、爆速的に記事を作成・管理・公開するワークフロー",
