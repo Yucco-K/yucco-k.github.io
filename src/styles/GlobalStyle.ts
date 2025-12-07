@@ -22,4 +22,3 @@ export const GlobalStyle = createGlobalStyle<{ bg: string }>`
     min-height: 100%;
   }
 `;
-

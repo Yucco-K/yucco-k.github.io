@@ -9,4 +9,3 @@ export function useBgColor() {
 		return "#2b8dff"; // 濃いスカイブルー
 	}, [pathname]);
 }
-

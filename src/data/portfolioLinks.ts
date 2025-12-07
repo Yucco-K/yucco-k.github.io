@@ -19,4 +19,3 @@ export const portfolioLinks = [
 	},
 	{ title: "tech-blog-1", url: "https://github.com/Yucco-K/tech-blog-1" },
 ];
-

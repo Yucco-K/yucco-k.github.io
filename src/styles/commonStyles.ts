@@ -74,4 +74,3 @@ export const PortfolioCard = styled.a`
 		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
 	}
 `;
-
