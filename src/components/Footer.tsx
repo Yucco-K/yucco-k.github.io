@@ -64,7 +64,7 @@ export default function Footer() {
 						Zenn
 					</FooterLink>
 				</FooterLinks>
-				<Copyright>© 2025 Yucco-K. All rights reserved.</Copyright>
+				<Copyright>© 2026 Yucco-K. All rights reserved.</Copyright>
 			</FooterContent>
 		</FooterContainer>
 	);
