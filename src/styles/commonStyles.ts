@@ -1,78 +1,88 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { theme } from "./theme";
 
 export const AppContainer = styled.div`
-	width: 100%;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 `;
 
-export const Nav = styled.nav`
-	display: flex;
-	justify-content: center;
-	gap: 2rem;
-	padding: 1.5rem 0 1rem 0;
-	background: rgba(0, 0, 0, 0.08);
+export const Header = styled.header`
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
-	width: 100%;
 	z-index: 10;
+	background: rgba(255, 255, 255, 0.92);
+	backdrop-filter: blur(8px);
+	border-bottom: 1px solid ${theme.colors.border};
+`;
+
+export const HeaderInner = styled.div`
+	max-width: ${theme.maxWidth};
+	margin: 0 auto;
+	padding: 0.9rem 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+`;
+
+export const SiteName = styled(Link)`
+	font-weight: 700;
+	font-size: 1.05rem;
+	color: ${theme.colors.heading};
+	text-decoration: none;
+	letter-spacing: 0.02em;
+`;
+
+export const Nav = styled.nav`
+	display: flex;
+	gap: 0.4rem;
 `;
 
 export const NavLink = styled(Link)<{ $active?: boolean }>`
-	color: ${({ $active, to }) =>
-		$active && to === "/internship" ? "#ffc300" : $active ? "#ffd700" : "#fff"};
-	font-weight: 600;
+	color: ${({ $active }) =>
+		$active ? theme.colors.heading : theme.colors.textMuted};
+	font-weight: ${({ $active }) => ($active ? 600 : 500)};
 	text-decoration: none;
-	font-size: 1.2rem;
-	padding: 0.3em 1em;
-	border-radius: 1em;
-	background: ${({ $active }) => ($active ? "rgba(255,255,255,0.12)" : "none")};
+	font-size: 0.95rem;
+	padding: 0.35em 0.9em;
+	border-radius: 6px;
+	background: ${({ $active }) =>
+		$active ? theme.colors.accentSoft : "transparent"};
 	transition: background 0.2s, color 0.2s;
+
 	&:hover {
-		background: rgba(255, 255, 255, 0.18);
-		color: #ffd700;
+		background: ${theme.colors.surfaceMuted};
+		color: ${theme.colors.heading};
 	}
 `;
 
-export const PortfolioGrid = styled.div`
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 2rem;
+export const Main = styled.main`
+	flex: 1;
 	width: 100%;
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0 2rem;
-	box-sizing: border-box;
-
-	@media (min-width: 768px) {
-		grid-template-columns: repeat(2, 1fr);
-	}
-
-	@media (min-width: 1024px) {
-		grid-template-columns: repeat(3, 1fr);
-	}
+	padding-top: 4rem;
 `;
 
-export const PortfolioCard = styled.div`
-	display: flex;
-	flex-direction: column;
-	padding: 2rem;
-	background: linear-gradient(135deg, #e8fff0 0%, #f0fff4 100%);
-	border-radius: 1rem;
-	box-shadow: 0 4px 24px rgba(34, 139, 34, 0.12);
-	color: #222;
-	text-align: left;
-	transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
-	min-height: 200px;
-	border: 1px solid rgba(34, 139, 34, 0.1);
+export const Badge = styled.span<{ $variant?: "done" | "wip" }>`
+	display: inline-block;
+	font-size: 0.78rem;
+	font-weight: 600;
+	line-height: 1;
+	padding: 0.35em 0.8em;
+	border-radius: 999px;
+	background: ${({ $variant }) =>
+		$variant === "wip" ? theme.colors.badgeWip : theme.colors.badgeDone};
+	color: ${({ $variant }) =>
+		$variant === "wip" ? theme.colors.badgeWipText : theme.colors.badgeDoneText};
+	white-space: nowrap;
+`;
 
-	&:hover {
-		transform: translateY(-4px);
-		box-shadow: 0 8px 32px rgba(34, 139, 34, 0.18);
-		background: linear-gradient(135deg, #daffe8 0%, #e8fff0 100%);
-	}
+export const Card = styled.div`
+	background: ${theme.colors.surface};
+	border: 1px solid ${theme.colors.border};
+	border-radius: ${theme.radius};
+	padding: 1.5rem;
 `;

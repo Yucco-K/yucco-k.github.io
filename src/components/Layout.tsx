@@ -1,39 +1,53 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { GlobalStyle } from "../styles/GlobalStyle";
-import { AppContainer, Nav, NavLink } from "../styles/commonStyles";
-import { useBgColor } from "../hooks/useBgColor";
+import {
+	AppContainer,
+	Header,
+	HeaderInner,
+	SiteName,
+	Nav,
+	NavLink,
+	Main,
+} from "../styles/commonStyles";
 import Footer from "./Footer";
-import Top from "../pages/Top";
-import Internship from "../pages/Internship";
-import Portfolio from "../pages/Portfolio";
+import Home from "../pages/Home";
+import Projects from "../pages/Projects";
 
 export default function Layout() {
-	const bg = useBgColor();
 	const { pathname } = useLocation();
 
 	return (
 		<>
-			<GlobalStyle bg={bg} />
+			<GlobalStyle />
 			<AppContainer>
-				<Nav>
-					<NavLink to="/" $active={pathname === "/"}>
-						Top
-					</NavLink>
-					<NavLink to="/internship" $active={pathname === "/internship"}>
-						Internship
-					</NavLink>
-					<NavLink to="/portfolio" $active={pathname === "/portfolio"}>
-						Portfolio
-					</NavLink>
-				</Nav>
-				<Routes>
-					<Route path="/" element={<Top />} />
-					<Route path="/internship" element={<Internship />} />
-					<Route path="/portfolio" element={<Portfolio />} />
-				</Routes>
+				<Header>
+					<HeaderInner>
+						<SiteName to="/">Yucco K</SiteName>
+						<Nav>
+							<NavLink to="/" $active={pathname === "/"}>
+								Home
+							</NavLink>
+							<NavLink to="/projects" $active={pathname === "/projects"}>
+								Personal Projects
+							</NavLink>
+						</Nav>
+					</HeaderInner>
+				</Header>
+				<Main>
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/projects" element={<Projects />} />
+						{/* 旧URLからのリダイレクト（外部共有済みリンクの切れ防止） */}
+						<Route path="/internship" element={<Navigate to="/" replace />} />
+						<Route
+							path="/portfolio"
+							element={<Navigate to="/projects" replace />}
+						/>
+						<Route path="*" element={<Navigate to="/" replace />} />
+					</Routes>
+				</Main>
 				<Footer />
 			</AppContainer>
 		</>
 	);
 }
-

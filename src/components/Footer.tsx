@@ -1,47 +1,43 @@
 import styled from "styled-components";
+import { theme } from "../styles/theme";
 
 const FooterContainer = styled.footer`
-	width: 100%;
-	background: rgba(0, 0, 0, 0.15);
-	color: #fff;
-	padding: 2rem 1rem;
-	text-align: center;
-	margin-top: auto;
-	box-sizing: border-box;
+	margin-top: 4rem;
+	border-top: 1px solid ${theme.colors.border};
+	background: ${theme.colors.surface};
+	padding: 2rem 1.5rem;
 `;
 
 const FooterContent = styled.div`
-	width: 100%;
-	max-width: 800px;
+	max-width: ${theme.maxWidth};
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
-	align-items: center;
-	box-sizing: border-box;
+	gap: 0.8rem;
+	align-items: flex-start;
 `;
 
 const FooterLinks = styled.div`
 	display: flex;
-	gap: 2rem;
+	gap: 1.5rem;
 	flex-wrap: wrap;
-	justify-content: center;
 `;
 
 const FooterLink = styled.a`
-	color: #fff;
+	color: ${theme.colors.link};
 	text-decoration: none;
 	font-weight: 500;
-	transition: color 0.2s;
+	font-size: 0.95rem;
+
 	&:hover {
-		color: #ffd700;
+		text-decoration: underline;
 	}
 `;
 
 const Copyright = styled.p`
 	margin: 0;
-	font-size: 0.9rem;
-	opacity: 0.8;
+	font-size: 0.85rem;
+	color: ${theme.colors.textMuted};
 `;
 
 export default function Footer() {
@@ -64,9 +60,8 @@ export default function Footer() {
 						Zenn
 					</FooterLink>
 				</FooterLinks>
-				<Copyright>© 2026 Yucco-K. All rights reserved.</Copyright>
+				<Copyright>© 2026 Yucco K. All rights reserved.</Copyright>
 			</FooterContent>
 		</FooterContainer>
 	);
 }
-
