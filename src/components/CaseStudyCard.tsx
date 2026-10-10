@@ -121,6 +121,16 @@ const DetailSection = styled.section`
 	}
 `;
 
+const ArticleLink = styled.a`
+	display: inline-block;
+	margin-top: 1rem;
+	font-size: 0.92rem;
+	font-weight: 600;
+	color: ${theme.colors.link};
+	text-decoration: underline;
+	text-underline-offset: 3px;
+`;
+
 const Note = styled.p`
 	margin-top: 1.3rem;
 	padding: 0.7rem 1rem;
@@ -189,6 +199,11 @@ export default function CaseStudyCard({ study }: { study: CaseStudy }) {
 						</DetailSection>
 					))}
 				</ExpandDetails>
+			)}
+			{study.article && (
+				<ArticleLink href={study.article.url} target="_blank" rel="noopener noreferrer">
+					{study.article.label} ↗
+				</ArticleLink>
 			)}
 			{study.note && <Note>{study.note}</Note>}
 		</StudyCard>
