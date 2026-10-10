@@ -13,7 +13,7 @@
 - **Experience** - 実務経験の概要（プロダクト開発インターン / QA・テスト業務）
 - **Selected Case Studies** - 代表的な開発実績のケーススタディ
 - **Additional Contributions** - その他の改善・修正実績
-- **Explorations & Challenges** - 開発・検証中の取り組み
+- **Explorations & Challenges** - 開発期間中の試作・実装実績（未マージ・本番未反映）
 - **Tech Stack** - 使用技術と用途
 
 ### ルーティング
