@@ -80,6 +80,10 @@ export const caseStudies: CaseStudy[] = [
 			},
 		],
 		note: "関連する3件のPRはマージ済みで、本番環境への反映も完了しています。利用状況や改善効果の数値は未計測のため記載していません。",
+		article: {
+			label: "UIモックとレビューの工夫（Zenn）",
+			url: "https://zenn.dev/yucco/articles/claude-design-ui-mockup-story",
+		},
 	},
 	{
 		id: "quiz-order-second-key",
@@ -196,6 +200,10 @@ export const caseStudies: CaseStudy[] = [
 			},
 		],
 		note: "一部のUI/UX仕様については、プロダクト全体との整合性を踏まえて継続的に改善しています。",
+		article: {
+			label: "開発・技術移行の解説（Zenn）",
+			url: "https://zenn.dev/yucco/articles/custom-learning-roadmap",
+		},
 	},
 	{
 		id: "drag-and-drop",
@@ -305,6 +313,10 @@ export const caseStudies: CaseStudy[] = [
 			"保存ボタンを1回押すだけでフォームを保存でき、CMSでは画面を再読み込みせずレッスンを連続作成できるようになりました。教材作成者の操作負担を軽減するとともに、フォーム周辺のロジックを再利用・テストしやすい構成へ整理しました。",
 		learning:
 			"画面上の不具合を修正するだけでなく、状態を管理している責務そのものを整理することが再発防止につながると学びました。入力・保存・非同期処理・再取得・エラー表示が同時に絡むフォームでは、責務の分離と状態遷移の明確化が、保守性とユーザー体験の両方に重要だと実感しました。",
+		article: {
+			label: "モーダルの不具合調査（Zenn）",
+			url: "https://zenn.dev/yucco/articles/modal-form-reset-useeffect",
+		},
 	},
 
 	{
