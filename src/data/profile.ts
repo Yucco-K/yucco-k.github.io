@@ -43,6 +43,10 @@ export const strengths = [
 		title: "AI-assisted Development",
 		description:
 			"Claude CodeなどのAIツールを調査・実装・テスト・ドキュメント作成の補助に活用。Obsidianで調査内容や学びを整理し、次の開発に生かしています。",
+		article: {
+			label: "Claude Code × Obsidianの開発ワークフロー（Zenn）",
+			url: "https://zenn.dev/yucco/articles/claude-code-obsidian-workflow",
+		},
 	},
 ];
 

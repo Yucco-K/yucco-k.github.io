@@ -95,6 +95,16 @@ const CardText = styled.p`
 	color: ${theme.colors.text};
 `;
 
+const StrengthArticleLink = styled.a`
+	display: inline-block;
+	margin-top: 0.85rem;
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: ${theme.colors.link};
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+`;
+
 const FocusList = styled.ul`
 	display: flex;
 	flex-wrap: wrap;
@@ -323,6 +333,11 @@ export default function Home() {
 						<Card key={strength.title}>
 							<CardTitle>{strength.title}</CardTitle>
 							<CardText>{strength.description}</CardText>
+							{strength.article && (
+								<StrengthArticleLink href={strength.article.url} target="_blank" rel="noopener noreferrer">
+									{strength.article.label} ↗
+								</StrengthArticleLink>
+							)}
 						</Card>
 					))}
 				</CardGrid>
