@@ -1,7 +1,7 @@
 export const profile = {
 	name: "Yucco K",
 	title: "Product-minded Full-stack Engineer",
-	titleNote: "ユーザーの課題を理解し、プロダクトの改善まで考えて実装するエンジニア",
+	titleNote: "ユーザーの課題を理解し、プロダクトの改善まで考えて実装する開発者",
 	intro: [
 		"2024年12月から2026年10月まで、教育系SaaSを展開する企業の開発チームに長期インターンとして参加し、UI/UX改善や新機能開発、API・DBを含む実装に携わりました。",
 		"「動くだけでなく、選ばれるプロダクト」を支える開発者を目指し、日々の学びや気づきはZennで発信しています。",
