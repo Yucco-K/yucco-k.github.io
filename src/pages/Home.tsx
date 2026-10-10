@@ -3,7 +3,7 @@ import { theme } from "../styles/theme";
 import { Badge, Card } from "../styles/commonStyles";
 import Section from "../components/Section";
 import CaseStudyCard from "../components/CaseStudyCard";
-import { profile, strengths, experiences, notes } from "../data/profile";
+import { profile, strengths, currentFocus, experiences, notes } from "../data/profile";
 import { caseStudies } from "../data/caseStudies";
 import { contributions } from "../data/contributions";
 import { explorations } from "../data/explorations";
@@ -93,6 +93,23 @@ const CardTitle = styled.h3`
 const CardText = styled.p`
 	font-size: 0.93rem;
 	color: ${theme.colors.text};
+`;
+
+const FocusList = styled.ul`
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.7rem;
+	list-style: none;
+	max-width: ${theme.contentWidth};
+`;
+
+const FocusItem = styled.li`
+	padding: 0.5rem 0.85rem;
+	border: 1px solid ${theme.colors.border};
+	border-radius: 6px;
+	background: ${theme.colors.surfaceMuted};
+	color: ${theme.colors.text};
+	font-size: 0.92rem;
 `;
 
 const ExperienceList = styled.div`
@@ -419,6 +436,18 @@ export default function Home() {
 						</TechList>
 					</TechCategoryBlock>
 				))}
+			</Section>
+
+			<Section
+				id="current-focus"
+				title="Current Focus"
+				lead="現在学習・実践に力を入れているテーマです。各分野の実装経験や習熟度を示すものではありません。"
+			>
+				<FocusList>
+					{currentFocus.map((topic) => (
+						<FocusItem key={topic}>{topic}</FocusItem>
+					))}
+				</FocusList>
 			</Section>
 
 			<Section id="notes" title="Notes">

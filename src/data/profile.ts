@@ -29,6 +29,34 @@ export const strengths = [
 		description:
 			"バリデーションやトランザクションによるデータ整合性の担保、カスタムフックへの責務分割など、保守しやすいコードを意識して実装しています。",
 	},
+	{
+		title: "Bug Investigation & Maintenance",
+		description:
+			"不具合の再現条件を確認し、ログや関連コードから原因を切り分けます。影響範囲を踏まえた修正と、再発を防ぐための検証に取り組んでいます。",
+	},
+	{
+		title: "Testing",
+		description:
+			"実装に合わせたテストケースの追加や既存テストの確認に加え、Playwrightを使ったE2Eテストにも取り組み、変更の影響を確かめています。",
+	},
+	{
+		title: "AI-assisted Development",
+		description:
+			"Claude CodeなどのAIツールを調査・実装・テスト・ドキュメント作成の補助に活用。Obsidianで調査内容や学びを整理し、次の開発に生かしています。",
+	},
+];
+
+// スキルの習熟度ではなく、現在学習・実践に力を入れているテーマ。
+export const currentFocus = [
+	"TypeScript",
+	"PostgreSQL / Database Design",
+	"HTTP / Web API",
+	"Authentication / Authorization",
+	"Testing / Debugging",
+	"Docker / CI/CD",
+	"AWS / Cloud Infrastructure",
+	"Backend Architecture",
+	"AI-assisted Software Engineering",
 ];
 
 export type Experience = {
