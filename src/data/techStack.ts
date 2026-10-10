@@ -53,7 +53,7 @@ export const techStack: TechCategory[] = [
 		category: "Development Tools",
 		items: [
 			{
-				name: "Cursor などのAIツール",
+				name: "Claude Code などのAIツール",
 				usage: "品質とスピードを両立した開発",
 			},
 			{ name: "Postman", usage: "APIテスト" },
