@@ -384,7 +384,7 @@ export default function Home() {
 			<Section
 				id="explorations"
 				title="Explorations & Challenges"
-				lead="完了実績とは別に、設計・実装に取り組んだ開発中・検討中のテーマです。"
+				lead="開発チームへの参加期間中に試作・実装したテーマです。いずれも未マージ・本番未反映のため、マージ済みの開発実績と区別して掲載しています。"
 			>
 				<ExplorationList>
 					{explorations.map((exploration) => (
@@ -404,7 +404,7 @@ export default function Home() {
 			<Section
 				id="tech-stack"
 				title="Tech Stack"
-				lead="実務のプロダクト開発で使用している技術と、その用途です。"
+				lead="開発チームでの活動を通じて使用した技術と、その用途です。"
 			>
 				{techStack.map((category) => (
 					<TechCategoryBlock key={category.category}>
