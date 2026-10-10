@@ -67,7 +67,7 @@ export default function Projects() {
 		<Section
 			id="projects"
 			title="Personal Projects"
-			lead="個人で企画・開発したアプリケーションの一覧です。インターンでの活動実績とは分けて掲載しています。一部の作品はモダナイズ（リニューアル）中のため、GitHubリポジトリを一時的に非公開にしています。リンク先を閲覧できない場合があり、掲載内容も順次見直しています。"
+			lead={<>個人で企画・開発したアプリケーションの一覧です。インターンでの活動実績とは分けて掲載しています。<strong>一部の作品はモダナイズ（リニューアル）中のため、GitHubリポジトリを一時的に非公開にしています。</strong>リンク先を閲覧できない場合があり、掲載内容も順次見直しています。</>}
 		>
 			<ProjectGrid>
 				{portfolioLinks.map((link) => (
