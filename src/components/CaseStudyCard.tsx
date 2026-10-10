@@ -135,7 +135,7 @@ export default function CaseStudyCard({ study }: { study: CaseStudy }) {
 		<StudyCard>
 			<TitleRow>
 				<StudyTitle>{study.title}</StudyTitle>
-				<Badge>完了実績</Badge>
+				<Badge>{study.status ?? "完了実績"}</Badge>
 			</TitleRow>
 			<Summary>{study.summary}</Summary>
 			{study.tags && (
