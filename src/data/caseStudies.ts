@@ -260,6 +260,10 @@ export const caseStudies: CaseStudy[] = [
 			"空白差異による誤判定を解消し、判定処理の保守性・テスト容易性を改善しました。実装はマージ済みで、本番環境に反映されています。",
 		learning:
 			"同じ仕様を複数箇所で実装すると差異が生まれやすいこと、ロジックの共通化が品質と保守性の双方に効くことを実感しました。",
+		article: {
+			label: "技術解説を読む（Zenn）",
+			url: "https://zenn.dev/yucco/articles/client-server-logic-drift",
+		},
 	},
 	{
 		id: "course-access-template",
