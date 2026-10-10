@@ -314,8 +314,8 @@ export const caseStudies: CaseStudy[] = [
 		learning:
 			"画面上の不具合を修正するだけでなく、状態を管理している責務そのものを整理することが再発防止につながると学びました。入力・保存・非同期処理・再取得・エラー表示が同時に絡むフォームでは、責務の分離と状態遷移の明確化が、保守性とユーザー体験の両方に重要だと実感しました。",
 		article: {
-			label: "モーダルの不具合調査（Zenn）",
-			url: "https://zenn.dev/yucco/articles/modal-form-reset-useeffect",
+			label: "保存ボタンの不具合と改善（Zenn）",
+			url: "https://zenn.dev/yucco/articles/e25cdcd6e839b6",
 		},
 	},
 
