@@ -18,6 +18,7 @@ export type CaseStudy = {
 	note?: string;
 	status?: string;
 	article?: { label: string; url: string };
+	articles?: { label: string; url: string }[];
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -226,6 +227,10 @@ export const caseStudies: CaseStudy[] = [
 			"チュートリアルやレッスンの順番を直感的に変更し、複数教材の順番をまとめて保存できるようになりました。教材管理者の手作業を軽減するとともに、API側の検証とトランザクションにより、表示順と保存データの不一致や不正な順序データの保存を防ぐ構成を実現しました。",
 		learning:
 			"ドラッグ＆ドロップのようなUI機能でも、重要なのは画面上の操作だけではなく、UIの状態管理・APIの入力検証・DB更新・トランザクション・保存後の再取得までを一連の流れとして設計する必要があると学びました。",
+		article: {
+			label: "ドラッグ＆ドロップ並び替えの技術解説（Zenn）",
+			url: "https://zenn.dev/yucco/articles/26463c7e00b2f6",
+		},
 	},
 	{
 		id: "visibility-progress",
@@ -313,10 +318,16 @@ export const caseStudies: CaseStudy[] = [
 			"保存ボタンを1回押すだけでフォームを保存でき、CMSでは画面を再読み込みせずレッスンを連続作成できるようになりました。教材作成者の操作負担を軽減するとともに、フォーム周辺のロジックを再利用・テストしやすい構成へ整理しました。",
 		learning:
 			"画面上の不具合を修正するだけでなく、状態を管理している責務そのものを整理することが再発防止につながると学びました。入力・保存・非同期処理・再取得・エラー表示が同時に絡むフォームでは、責務の分離と状態遷移の明確化が、保守性とユーザー体験の両方に重要だと実感しました。",
-		article: {
-			label: "保存ボタンの不具合と改善（Zenn）",
-			url: "https://zenn.dev/yucco/articles/e25cdcd6e839b6",
-		},
+		articles: [
+			{
+				label: "保存ボタンの不具合と改善（Zenn）",
+				url: "https://zenn.dev/yucco/articles/e25cdcd6e839b6",
+			},
+			{
+				label: "モーダルのフォーム初期化と連続作成の改善（Zenn）",
+				url: "https://zenn.dev/yucco/articles/modal-form-reset-useeffect",
+			},
+		],
 	},
 
 	{

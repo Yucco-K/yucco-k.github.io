@@ -121,9 +121,16 @@ const DetailSection = styled.section`
 	}
 `;
 
+const ArticleLinks = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.5rem;
+	margin-top: 1rem;
+`;
+
 const ArticleLink = styled.a`
 	display: inline-block;
-	margin-top: 1rem;
 	font-size: 0.92rem;
 	font-weight: 600;
 	color: ${theme.colors.link};
@@ -200,10 +207,14 @@ export default function CaseStudyCard({ study }: { study: CaseStudy }) {
 					))}
 				</ExpandDetails>
 			)}
-			{study.article && (
-				<ArticleLink href={study.article.url} target="_blank" rel="noopener noreferrer">
-					{study.article.label} ↗
-				</ArticleLink>
+			{(study.article || study.articles?.length) && (
+				<ArticleLinks>
+					{(study.articles ?? (study.article ? [study.article] : [])).map((article) => (
+						<ArticleLink key={article.url} href={article.url} target="_blank" rel="noopener noreferrer">
+							{article.label} ↗
+						</ArticleLink>
+					))}
+				</ArticleLinks>
 			)}
 			{study.note && <Note>{study.note}</Note>}
 		</StudyCard>
