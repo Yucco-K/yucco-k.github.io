@@ -7,11 +7,13 @@ export const portfolioLinks = [
 	},
 	{
 		title: "Re:Mind",
+		status: "非公開中",
 		description: "日常にフィットするTODO管理アプリ",
 		url: "https://github.com/Yucco-K/react-native-todo-app",
 	},
 	{
 		title: "質問掲示板アプリ",
+		status: "非公開中",
 		description:
 			"ユーザーが自由に質問を投稿し、他のユーザーから回答を得ることができるナレッジ共有型プラットフォーム",
 		url: "https://github.com/Yucco-K/question-app",
@@ -23,6 +25,7 @@ export const portfolioLinks = [
 	},
 	{
 		title: "tech-blog-1",
+		status: "非公開中",
 		description:
 			"Cursor と TaskMaster と Zenn と GitHub を連携し、爆速的に記事を作成・管理・公開するワークフロー",
 		url: "https://github.com/Yucco-K/tech-blog-1",
