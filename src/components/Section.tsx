@@ -35,7 +35,7 @@ const SectionLead = styled.p`
 type SectionProps = {
 	id: string;
 	title: string;
-	lead?: string;
+	lead?: ReactNode;
 	children: ReactNode;
 };
 
