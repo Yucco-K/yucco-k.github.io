@@ -36,6 +36,17 @@ const ProjectTitle = styled.h3`
 	color: ${theme.colors.heading};
 `;
 
+const ProjectStatus = styled.span`
+	display: inline-block;
+	align-self: flex-start;
+	font-size: 0.8rem;
+	font-weight: 600;
+	color: ${theme.colors.textMuted};
+	border: 1px solid ${theme.colors.accentSoft};
+	border-radius: 6px;
+	padding: 0.2rem 0.55rem;
+`;
+
 const ProjectDescription = styled.p`
 	font-size: 0.93rem;
 	color: ${theme.colors.text};
@@ -73,7 +84,9 @@ export default function Projects() {
 				{portfolioLinks.map((link) => (
 					<ProjectCard key={link.url}>
 						<ProjectTitle>{link.title}</ProjectTitle>
+						{link.status && <ProjectStatus>{link.status}</ProjectStatus>}
 						<ProjectDescription>{link.description}</ProjectDescription>
+						{!link.status && (
 						<GitHubLink
 							href={link.url}
 							target="_blank"
@@ -84,6 +97,7 @@ export default function Projects() {
 							</svg>
 							GitHubで見る
 						</GitHubLink>
+						)}
 					</ProjectCard>
 				))}
 			</ProjectGrid>
