@@ -404,7 +404,7 @@ export default function Home() {
 			<Section
 				id="tech-stack"
 				title="Tech Stack"
-				lead="実務のプロダクト開発で経験した技術と、その用途です。"
+				lead="開発や学習を通じて触れた技術と、その用途をまとめています。技術によって実装経験や理解の深さは異なります。"
 			>
 				{techStack.map((category) => (
 					<TechCategoryBlock key={category.category}>
