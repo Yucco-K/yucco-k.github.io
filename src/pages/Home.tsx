@@ -353,7 +353,7 @@ export default function Home() {
 			<Section
 				id="case-studies"
 				title="Selected Case Studies"
-				lead="実務で担当した開発の中から、課題設定から実装・結果までを主要な8件で紹介します。マージ済みの実績と、実装・検証済みで調整待ちの実績は区別して記載しています。"
+				lead="実務で担当した開発の中から、課題設定から実装・結果までを主要な9件で紹介します。マージ済みの実績と、実装・検証済みで調整待ちの実績は区別して記載しています。"
 			>
 				<StudyList>
 					{caseStudies.map((study) => (
